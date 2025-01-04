@@ -1,0 +1,137 @@
+/* General Styling */
+body {
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-image: url('images/bg3.jpg'); /* Add your background image here */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    background: #ffffff;
+    width: 600px;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+}
+
+h1 {
+    font-size: 34px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #28982f; /* Blue theme */
+}
+
+/* Quote Section */
+.quote-section {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #000000;
+    font-size: 20px;
+}
+
+.quote-section span {
+    font-size: 20px;
+    font-weight: bold;
+    color: #28982f;
+}
+
+/* Alert Messages */
+.alert {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 17px;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+form input,
+form label,
+form button {
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+form input {
+    padding: 10px;
+    border: 1px solid #28982f;
+    transition: border-color 0.3s ease;
+}
+
+form input:focus {
+    border-color: #28982f;
+    outline: none;
+    box-shadow: 0 0 5px #28982f;
+}
+
+form button {
+    padding: 12px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #28982f;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form button:hover {
+    background-color: black;
+    transform: translateY(-3px);
+}
+
+/* File Input and Date Styling */
+form label {
+    margin-top: 10px;
+    color: #444;
+    font-weight: bold;
+}
+
+form input[type="file"],
+form input[type="date"] {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Form Footer */
+.form-footer {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+.form-footer a {
+    color: #28982f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
+}

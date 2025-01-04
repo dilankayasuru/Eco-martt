@@ -1,0 +1,215 @@
+/* Resetting some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2em;
+    background-color: #28a745; /* Green background */
+}
+
+.navbar .logo {
+    color: white;
+    font-size: 2.3rem;
+    font-weight: bold;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 3em;
+}
+
+.navbar .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.navbar-buttons {
+    display: flex;
+    gap: 2em;
+}
+
+.navbar-buttons a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.cart-btn,
+.login-btn {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Container styles */
+form {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 600px;
+    box-sizing: border-box;
+    margin-left: 480px;
+}
+
+h1 {
+    text-align: center;
+    color: #34f50d;
+    margin-bottom: 30px;
+    margin-top: 50px;
+    font-size: 40px;
+}
+
+/* Input styles */
+form div {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #007BFF;
+    outline: none;
+    box-shadow: 0 0 5px rgba(31, 181, 11, 0.8);
+}
+
+/* Button styles */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #3b7948;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #16b75e;
+}
+
+
+
+/* Responsive styles */
+@media (max-width: 480px) {
+    form {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    input[type="email"],
+    input[type="password"],
+    button {
+        font-size: 14px;
+    }
+}
+
+/* Error message styles */
+div p {
+    color: rgb(246, 238, 238);
+    margin: 30px 0 10px 0;
+    font-size: 17px;
+}
+
+/* Links styles */
+p {
+    text-align: center;
+    margin: 10px 0 0 0;
+}
+
+a {
+    color: #13ee29;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Quote Section Styling */
+.quote-section {
+    text-align: center;
+    margin:  auto;
+    padding: 20px;
+    max-width: 1800px;
+    background: #fff; /* Gradient background */
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold; 
+    box-shadow: 0 10px 8px rgb(10, 230, 90);
+    position: relative; /* For positioning child elements */
+    overflow: hidden;
+}
+
+/* Decorative Element */
+.quote-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 10%, transparent 70%);
+    pointer-events: none;
+    animation: moveGlow 6s infinite;
+}
+
+/* Quote Text */
+.quote-section p {
+    margin: 0;
+    padding: 0;
+    font-family: 'Georgia', serif; /* Professional font for quotes */
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+.quote-section span {
+    color: #2a9619; /* Highlight color for important text */
+    font-style: italic;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .quote-section {
+        padding: 15px;
+    }
+
+    .quote-section p {
+        font-size: 18px;
+    }
+}
+
+
