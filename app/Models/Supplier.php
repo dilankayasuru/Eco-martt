@@ -17,10 +17,11 @@ class Supplier extends Model
         'certification_image',
         'valid_time_period',
         'is_approved',
+        'contact_number',
     ];
 
     protected $casts = [
-        'is_approved' => 'boolean', // Ensure is_approved is treated as a boolean
+        'is_approved' => 'boolean', 
     ];
 
     public function user()

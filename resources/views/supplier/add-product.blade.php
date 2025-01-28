@@ -56,11 +56,7 @@
             <div class="form-group">
                 <label for="product_certification_image">Product Certification Image:</label>
                 <input type="file" id="product_certification_image" name="product_certification_image" class="form-control">
-            </div>
-            
-            
-            
-
+            </div>  
             
     
             <div class="form-group" style="margin-bottom: 15px;">

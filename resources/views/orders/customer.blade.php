@@ -14,7 +14,7 @@
             background-color: #28a745;
             position: fixed;
             top: 0;
-            width: 100%;
+            width: 95%;
             z-index: 1000;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
@@ -189,14 +189,21 @@
 
     <br><br><br>
 
-    <!-- Order Tracking -->
-    <div class="order-tracking-container">
-        @if($orders->isEmpty())
-            <p>No orders found.</p>
-        @else
-            @foreach($orders as $order)
-                <div class="order-card">
-                    <h2 class="order-header">Order ID: {{ $order->id }}</h2>
+   <!-- Order Tracking -->
+<div class="order-tracking-container">
+    @if($orders->isEmpty())
+        <p>No orders found.</p>
+    @else
+        @foreach($orders as $order)
+            <div class="order-card">
+                <h2 class="order-header">Order ID: {{ $order->id }}</h2>
+                
+                @if($order->status === 'cancelled')
+                    <div style="text-align: center; margin: 20px 0;">
+                        <p style="font-size: 1.2rem; font-weight: bold; color: #e74c3c;">We're sorry! This order was cancelled. 😞</p>
+                        <p style="font-size: 1rem; color: #555;">But don't worry, we're here to help you find the perfect alternative. Browse our <a href="{{ route('products.index') }}" style="color: #28a745; text-decoration: underline;">products</a> to shop again!</p>
+                    </div>
+                @else
                     <div class="tracking-progress">
                         <div class="tracking-step">
                             <span class="{{ in_array($order->status, ['pending', 'confirmed', 'shipped', 'delivered']) ? 'active' : '' }}"></span>
@@ -224,10 +231,12 @@
                         @endforeach
                     </ul>
                     <p class="order-total">Total: LKR {{ number_format($order->total_amount, 2) }}</p>
-                </div>
-            @endforeach
-        @endif
-    </div>
+                @endif
+            </div>
+        @endforeach
+    @endif
+</div>
+
 
     <!-- Footer -->
     <footer class="footer">

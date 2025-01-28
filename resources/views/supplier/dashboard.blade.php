@@ -152,8 +152,14 @@
 
 <!--button for view orders-->
 <div class="action-section">
-    <a href="{{ route('supplier.orders.index') }}" class="btn btn-view">View Orders</a>
-   
+    <a href="{{ route('supplier.orders.index') }}" 
+       style="display: inline-block; padding: 10px 20px; color: #fff; background-color: #007bff; text-decoration: none; border-radius: 5px; font-size: 16px; text-align: center; transition: background-color 0.3s ease;"
+       onmouseover="this.style.backgroundColor='#0056b3'"
+       onmouseout="this.style.backgroundColor='#007bff'">
+        View Orders
+    </a>
+</div>
+
 
 
    

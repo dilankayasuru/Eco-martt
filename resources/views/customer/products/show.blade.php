@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ $product->name }}</title>
     <link rel="stylesheet" href="{{ asset('/product-details.css') }}">
+    <link rel="stylesheet" href="{{ asset('/products.css') }}">
+    
 </head>
 <style>
     body {
@@ -20,6 +22,32 @@
        }
 </style>
 <body>
+
+     <!-- Navbar -->
+     <header>
+        <nav class="navbar">
+            <div class="logo">Eco - Mart</div>
+            <ul class="nav-links">
+                <li><a href="{{ route('customer.dashboard')}}">Home</a></li>
+                <li><a href="{{ route('customer.profile') }}">My Profile</a></li>
+                <li><a href="{{ route('products.index')}}">Products</a></li>
+                <li><a href="{{ route('reviews.index') }}">Customer Support</a></li>
+                <li><a href="{{ route('orders.index')}}">My Orders</a></li>
+
+   
+            </ul>
+            <div class="navbar-buttons">    
+                <a href="{{ route('cart.show')}}" class="cart-btn">🛒</a>
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <button type="submit">Logout</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+    <br><br><br><br>
+
+    
     <div class="product-details-container" 
     style="max-width: 1200px; margin: 2em auto; padding: 2em; background-color: #65eb1121; border-radius: 10px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); display: flex; flex-wrap: wrap; gap: 2em; font-family: Arial, sans-serif; color: #333;">
     
@@ -35,7 +63,7 @@
         <p style="margin-bottom: 0.5em;"><strong>Description: </strong>{{ $product->description }}</p>
         <p style="margin-bottom: 0.5em;"><strong>Category: </strong>{{ $product->category }}</p>
         <p style="margin-bottom: 0.5em; "><strong>Price: </strong>Rs.{{ number_format($product->price, 2) }}</p>
-        <p style="margin-bottom: 0.5em;"><strong>Available Quantity: </strong>{{ $product->quantity }}</p>
+        <p style="margin-bottom: 0.5em;"><strong>Available Quantity: </strong>{{ $product->quantity }} Packets </p>
         <p style="margin-bottom: 0.5em;"><strong>Supplier: </strong>{{ $product->supplier->name }}</p>
         <p style="margin-bottom: 1em;"><strong>Product Certification Name: </strong>{{ $product->product_certification }}</p>
 
@@ -54,7 +82,7 @@
         <form action="{{ route('cart.add') }}" method="POST" class="cart-form" style="margin-top: 1.5em;">
             @csrf
             <label for="quantity" style="font-weight: bold; margin-right: 0.5em;">Quantity:</label>
-            <input type="number" name="quantity" id="quantity" value="1" min="1" max="{{ $product->quantity }}" 
+            <input type="number" name="quantity" id="quantity" value="1" min="1" max="{{ $product->quantity }} pkt" 
                    required style="padding: 0.5em; font-size: 1rem; border: 1px solid #ddd; border-radius: 5px; margin-right: 1em; max-width: 100px;">
             <input type="hidden" name="product_id" value="{{ $product->id }}">
             <button type="submit" 

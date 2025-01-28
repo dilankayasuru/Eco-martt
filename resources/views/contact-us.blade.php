@@ -164,10 +164,7 @@ body {
                 <li><a href="{{ route('home')}}">Home</a></li>
                 <li><a href="{{ route('our-story')}}">Our Story</a></li>
                 <li><a href="{{ route('login') }}">Our Products</a></li>
-                
-                <li><a href="{{ route('investors.index')}}">Investors</a></li>
                 <li><a href="{{ route('contact-us')}}">Contact Us</a></li>
-                {{-- <li><a href="{{ route('submitReview')}}">Cus</a></li> --}}
             </ul>
             <div class="navbar-buttons">
                 <a href="{{ route('login') }}" class="cart-btn">🛒</a>

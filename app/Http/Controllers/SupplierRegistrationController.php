@@ -23,8 +23,10 @@ class SupplierRegistrationController extends Controller
             'password' => 'required|string|min:8|confirmed',
             'company_name' => 'required|string|max:255',
             'certification_name' => 'required|string|max:255',
-            'certification_image' => 'required|image|mimes:jpeg,png,jpg|max:2048', // Max size: 2MB
+            'certification_image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
             'valid_time_period' => 'required|date',
+            'contact_number' => 'required|string|max:15',
+            
         ]);
 
         // Create the user
@@ -44,6 +46,7 @@ class SupplierRegistrationController extends Controller
             'certification_name' => $validated['certification_name'],
             'certification_image' => $certificationImagePath,
             'valid_time_period' => $validated['valid_time_period'],
+            'contact_number' => $validated['contact_number'],
         ]);
 
         return redirect()->route('supplier.pending')->with('success', 'Your registration is pending approval.');

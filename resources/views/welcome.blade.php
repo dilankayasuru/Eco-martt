@@ -17,10 +17,8 @@
                 <li><a href="#">Home</a></li>
                 <li><a href="{{ route('our-story')}}">Our Story</a></li>
                 <li><a href="{{ route('login') }}">Our Products</a></li>
-                
-                <li><a href="{{ route('investors.index')}}">Investors</a></li>
                 <li><a href="{{ route('contact-us')}}">Contact Us</a></li>
-                {{-- <li><a href="{{ route('submitReview')}}">Cus</a></li> --}}
+                
             </ul>
             <div class="navbar-buttons">
                 <a href="{{ route('login') }}" class="cart-btn">🛒</a>
@@ -35,14 +33,9 @@
             <h1>Welcome to ...
                 <br><span>Eco - Mart</span></h1>
             <p>Join us on our journey to sustainability !!!</p>
-            {{-- <input type="text" placeholder="Search here ..." class="search-bar"> --}}
-            <button class="learn-more">Find more about our company...</button>
+            
         </div>
-        <div class="banner-images">
-            <img src="/images/download.jpeg" alt="Image 1">
-            <img src="/images/images.jpeg" alt="Image 2">
-            <img src="/images/images (1).jpeg" alt="Image 3">
-        </div>
+
     </section>
 
     <!-- Our Company Section -->
@@ -75,10 +68,10 @@
     <div class="product-content">
         <img src="/images/food.png" alt="Products" class="product-image">
         <div class="product-text">
-            <h2>Join Us in Creating Impact</h2>
-            <a href="{{ route('investors.index') }}" class="explore-btn" 
+            <h2>Join Us in Explore the products</h2>
+            <a href="{{ route('login') }}" class="explore-btn" 
                style="text-decoration: none; background-color: #28a745; color: white; padding: 12px 20px; border-radius: 5px; font-size: 1.2rem; cursor: pointer; transition: background-color 0.3s ease;">
-               Become an Investor
+               Our Products
             </a>
         </div>
     </div>

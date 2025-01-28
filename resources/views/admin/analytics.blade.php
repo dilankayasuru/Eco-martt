@@ -24,9 +24,9 @@
         @endif
 
         <!-- Display Counts -->
-        <div class="row mt-4">
+        <div class="mt-4 row">
             <div class="col-md-6">
-                <div class="card text-center">
+                <div class="text-center card">
                     <div class="card-body">
                         <h5 class="card-title">Total Customers</h5>
                         <p class="card-text">{{ $customersCount }}</p>
@@ -34,7 +34,7 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="card text-center">
+                <div class="text-center card">
                     <div class="card-body">
                         <h5 class="card-title">Total Suppliers</h5>
                         <p class="card-text">{{ $suppliersCount }}</p>
@@ -43,9 +43,9 @@
             </div>
         </div>
 
-        <div class="row mt-4">
+        <div class="mt-4 row">
             <div class="col-md-4">
-                <div class="card text-center">
+                <div class="text-center card">
                     <div class="card-body">
                         <h5 class="card-title">Total Registered Users</h5>
                         <p class="card-text">{{ $totalUsers }}</p>
@@ -53,7 +53,7 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card text-center">
+                <div class="text-center card">
                     <div class="card-body">
                         <h5 class="card-title">Weekly New Signups</h5>
                         <p class="card-text">{{ $weeklySignups }}</p>
@@ -61,7 +61,7 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card text-center">
+                <div class="text-center card">
                     <div class="card-body">
                         <h5 class="card-title">Total Pending Accounts</h5>
                         <p class="card-text">{{ $pendingAccounts }}</p>
@@ -90,9 +90,11 @@
                             <a href="#" class="supplier-link" 
                                data-id="{{ $supplier->id }}"
                                data-name="{{ $supplier->name }}"
+                               
                                data-email="{{ $supplier->email }}"
                                data-company="{{ $supplier->supplier->company_name ?? 'N/A' }}"
                                data-certification_name="{{ $supplier->supplier->certification_name ?? 'N/A' }}"
+                               data-contact-number="{{$supplier->supplier->contact_number}}"
                                data-status="{{ $supplier->supplier && $supplier->supplier->is_approved ? 'Approved' : 'Pending' }}">
                                {{ $supplier->name }}
                             </a>
@@ -168,15 +170,14 @@
                 <div class="modal-body">
                     <p><strong>ID:</strong> <span id="supplierId"></span></p>
                     <p><strong>Name:</strong> <span id="supplierName"></span></p>
+                    <p><strong>Contact Number:</strong> <span id="supplierContactNumber"></span></p>
                     <p><strong>Email:</strong> <span id="supplierEmail"></span></p>
                     <p><strong>Company:</strong> <span id="supplierCompany"></span></p>
                 <p><strong>Certification Name:</strong> <span id="supplierCertificationName"></span></p>
                     <p><strong>Status:</strong> <span id="supplierStatus"></span></p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn
-
--secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn -secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
@@ -188,7 +189,6 @@
         document.addEventListener('DOMContentLoaded', function () {
             // Select all supplier links
             const supplierLinks = document.querySelectorAll('.supplier-link');
-
             // Add a click event listener to each link
             supplierLinks.forEach(link => {
                 link.addEventListener('click', function (event) {
@@ -198,16 +198,18 @@
                     const supplierId = this.getAttribute('data-id');
                     const supplierName = this.getAttribute('data-name');
                     const supplierEmail = this.getAttribute('data-email');
+                    const supplierContactNumber = this.getAttribute('data-contact-number');
                     const supplierCompany = this.getAttribute('data-company');
                     const supplierCertificationName = this.getAttribute('data-certification_name');
                     const supplierStatus = this.getAttribute('data-status');
 
-                    console.log(supplierId, supplierName, supplierEmail, supplierCompany, supplierCertificationName, supplierStatus);
+                    console.log(supplierId, supplierName, supplierEmail, supplierCompany, supplierCertificationName, supplierStatus, supplierContactNumber);
 
                     // Populate modal fields
                     document.getElementById('supplierId').textContent = supplierId;
                     document.getElementById('supplierName').textContent = supplierName;
                     document.getElementById('supplierEmail').textContent = supplierEmail;
+                    document.getElementById('supplierContactNumber').textContent = supplierContactNumber;
                     document.getElementById('supplierCompany').textContent = supplierCompany;
                     document.getElementById('supplierCertificationName').textContent = supplierCertificationName;
                     document.getElementById('supplierStatus').textContent = supplierStatus;

@@ -38,6 +38,7 @@
             @csrf
             <input type="text" name="name" placeholder="Full Name" value="{{ old('name') }}" required>
             <input type="text" name="company_name" placeholder="Company Name" value="{{ old('company_name') }}" required>
+            <input type="text" name="contact_number" placeholder="Contact Number" value="{{ old('contact_number') }}" required>
             <input type="email" name="email" placeholder="Email Address" value="{{ old('email') }}" required>
             <input type="password" name="password" placeholder="Password" required>
             <input type="password" name="password_confirmation" placeholder="Confirm Password" required>

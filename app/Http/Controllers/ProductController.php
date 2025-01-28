@@ -123,10 +123,6 @@ class ProductController extends Controller
         return view('customer.products.index', compact('productsByCategory'));
     }
 
-    
-
-   
-    
 
 }
 
